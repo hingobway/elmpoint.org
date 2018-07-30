@@ -1,0 +1,22 @@
+{
+  "name": "elmpoint.org",
+  "version": "1.0.0",
+  "description": "The Elm Point Camp website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hingobway/elmpoint.org.git"
+  },
+  "author": "hingobway",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hingobway/elmpoint.org/issues"
+  },
+  "homepage": "https://github.com/hingobway/elmpoint.org#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
