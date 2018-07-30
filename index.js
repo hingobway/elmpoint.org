@@ -20,7 +20,10 @@ mongoose
     MONGODB_URI,
     { useNewUrlParser: true }
   )
-  .then(() => console.log('MongoDB connected'), err => console.log(err));
+  .then(
+    () => console.log('MongoDB connected'),
+    err => console.log(new Error('MongoDB failed to connect.'))
+  );
 
 // MIDDLEWARE
 app.use(bp.json());
