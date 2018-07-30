@@ -4,8 +4,9 @@
   "description": "The Elm Point Camp website",
   "main": "index.js",
   "scripts": {
+    "test": "node .",
     "start": "node index.js",
-    "test": "nodemon env.js"
+    "dev": "nodemon env.js"
   },
   "repository": {
     "type": "git",
