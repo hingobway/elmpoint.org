@@ -4,6 +4,7 @@
   "description": "The Elm Point Camp website",
   "main": "index.js",
   "scripts": {
+    "build": "babel src -d public",
     "start": "node index.js",
     "dev": "nodemon dev.js"
   },
@@ -18,6 +19,8 @@
   },
   "homepage": "https://github.com/hingobway/elmpoint.org#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "dotenv": "^6.0.0",
     "nodemon": "^1.18.3"
   },
