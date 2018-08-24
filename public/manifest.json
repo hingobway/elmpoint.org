@@ -1,0 +1,15 @@
+{
+  "short_name": "Elm Point",
+  "name": "Elm Point Camp",
+  "icons": [
+    {
+      "src": "/images/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FAFAFA",
+  "theme_color": "#666"
+}
