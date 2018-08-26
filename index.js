@@ -3,16 +3,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bp = require('body-parser');
 const https = require('https');
-const multer = require('multer');
 const path = require('path');
-const fs = require('fs');
 const ejs = require('ejs');
 
 //
 // ENV VARS
 const { MONGODB_URI } = process.env;
-
-const upl = multer();
 
 //
 // ROUTER INIT
@@ -57,9 +53,14 @@ app.use(async (req, res, next) => {
 // serve static files
 app.use(express.static(__dirname + '/public'));
 
+// error 404
+app.use((req, res) => res.status(404).send('404 Not Found'));
+
+//
 // LISTEN
 app.listen(port, () => console.log('Listening on ' + port));
 
+//
 // PINGER
 setInterval(() => {
   https.get('https://elmpoint.org');
