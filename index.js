@@ -1,14 +1,9 @@
 // PACKAGES
 const express = require('express');
-const mongoose = require('mongoose');
 const bp = require('body-parser');
 const https = require('https');
 const path = require('path');
 const ejs = require('ejs');
-
-//
-// ENV VARS
-const { MONGODB_URI } = process.env;
 
 //
 // ROUTER INIT
@@ -17,12 +12,7 @@ const port = process.env.PORT || 8080;
 
 //
 // DB INIT
-mongoose
-  .connect(
-    MONGODB_URI,
-    { useNewUrlParser: true }
-  )
-  .then(() => console.log('MongoDB connected'), err => console.log(err));
+const db = require('./db');
 
 //
 // MIDDLEWARE / CONFIG
