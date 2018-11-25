@@ -6,7 +6,8 @@
   "scripts": {
     "build": "babel src -d public",
     "start": "node index.js",
-    "dev": "nodemon dev.js"
+    "dev": "nodemon dev.js",
+    "docker:start": "node dev"
   },
   "repository": {
     "type": "git",
