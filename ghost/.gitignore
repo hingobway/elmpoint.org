@@ -1,0 +1,5 @@
+# Ghost Templates
+*.zip
+
+# Data Backups
+*.ghost.*.json
