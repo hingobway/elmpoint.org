@@ -1,6 +1,7 @@
 <div id="app">
   <%- include('components/nav.html') %>
-    <div id="page">
-      <%- page %>
-    </div>
+  <div class="alert alert-danger rounded-0" v-if="alert">{{alertLong}}</div>
+  <div id="page" class="mt-4">
+    <%- page %>
+  </div>
 </div>

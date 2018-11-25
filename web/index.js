@@ -1,9 +1,13 @@
 // PACKAGES
 const express = require('express');
 const bp = require('body-parser');
+const cp = require('cookie-parser');
 const https = require('https');
 const path = require('path');
 const ejs = require('ejs');
+const qs = require('querystring');
+
+const auth = require('./auth');
 
 //
 // ROUTER INIT
@@ -22,11 +26,20 @@ app.engine('html', ejs.__express);
 
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
+app.use(cp());
 
 //
 // ROUTES
 app.use('/api', require('./api'));
 
+// authenticate protected endpoints
+app.use(async (req, res, next) => {
+  if (!req.path.match(/^\/auth\/(?!$)/i)) return next();
+  if (req.cookies.auth && (await auth.verify(req.cookies.auth))) return next();
+  res.redirect(
+    '/auth?' + qs.stringify(Object.assign({ path: req.path }, req.query))
+  );
+});
 // serve HTML
 app.use(async (req, res, next) => {
   app.render(

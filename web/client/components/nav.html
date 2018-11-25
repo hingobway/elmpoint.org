@@ -1,1 +1,12 @@
-<h1>Elm Point</h1>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Elm Point</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbar">
+    <div class="navbar-nav">
+      <a v-for="(nlink,ind) in navLinks" :href="nlink.path" :class="nlinkclasses[ind]">{{nlink.name}}</a>
+    </div>
+  </div>
+</nav>
