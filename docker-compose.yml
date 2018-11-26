@@ -7,6 +7,10 @@ services:
       - ./web:/usr/src/app
     environment:
       PORT: 742
+      MONGODB_URI: ${WEB_MONGODB_URI}
+      FIREBASE_CONFIG: ${WEB_FIREBASE_CONFIG}
+      JWT_SECRET: ${WEB_JWT_SECRET}
+      SITE_PASSWORD: ${WEB_SITE_PASSWORD}
     command: npx nodemon -L --exec "yarn docker:start"
   db:
     image: mysql:5.7

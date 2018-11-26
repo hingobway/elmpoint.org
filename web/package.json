@@ -7,7 +7,7 @@
     "build": "gulp all",
     "start": "node index.js",
     "dev": "nodemon dev.js",
-    "docker:start": "node dev"
+    "docker:start": "node ."
   },
   "repository": {
     "type": "git",
